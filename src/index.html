@@ -1,7 +1,69 @@
-@@include('head.html')
+@@include('head.html', {
+    "customcss": '',
+})
 <body>
-    <div class="cont">
-        cont
-    </div>
+    <section class="main_kv">
+        <span class="mouse">
+            <i>
+                scroll to view more
+            </i>
+            <em></em>
+        </span>
+    </section>
+    <section class="main_yw">
+        <div class="yw-there">
+            <h3 class="text-wave">영월, 그 곳</h3>
+            <p class="text-wave middle">자연이 만든 결을 담아내다</p>
+            <p class="text-wave text">반만년의 세월이 빚어내어 자연의 결이 오롯이 살아 숨쉬는 영월</p>
+            <p class="text-wave text">드높은 하늘에서 자유로이 질주하는 바람결</p>
+            <p class="text-wave text">한결같이 땅을 휘감아 흘러가는 강물결</p>
+            <p class="text-wave text">당신을 위해 준비된, 더 한옥에서 자연의 결을 오롯이 느껴보세요.</p>
+        </div>
+    </section>
+    <section class="main_beauty">
+
+    </section>
+    <section class="main_wait">
+
+    </section>
+    <section class="main_map">
+
+    </section>
 </body>
+
+
+<script>
+
+(function($){
+
+    // 영월 그곳
+    function textWave() {
+        var $waveText = $('.text-wave');
+        var animationDelay = 10;
+        var count = 0;
+        $waveText.each(function(e){
+            var newDom = '';
+            for(let i = 0; i < $(this).text().length; i++)
+            {
+                newDom += '<span class="char-wave">' + ($(this).text()[i] == ' ' ? '&nbsp;' : $(this).text()[i])+ '</span>';
+            }
+            $(this).html(newDom);
+            $length = $(this).children('span').length;
+            for(let i = 0; i < $length; i++)
+            {
+                $(this).children('span').eq(i).css('animationDelay',(animationDelay * i) + count + 'ms');
+            }
+            count = count + 100;
+        });
+    }
+
+    $(function(){
+
+        textWave();
+
+    });
+})(jQuery);
+</script>
+
+
 </html>
