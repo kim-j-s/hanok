@@ -10,6 +10,14 @@
     position: relative;
     height: 100%;
     background: url(../images/main/img_main_kv.jpg) no-repeat center center / cover;
+    .main_kv_text {
+        text-align: center;
+        color: #fff;
+        h2 {
+            font-family: $mj;
+        }
+    }
+
     .mouse {
         position: absolute;
         left: 50%;

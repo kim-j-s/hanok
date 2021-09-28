@@ -7,6 +7,15 @@
 
 /* // common */
 /* header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  z-index: 1;
+}
+
 /* // header */
 /* header */
 /* // header */
@@ -20,6 +29,15 @@
   position: relative;
   height: 100%;
   background: url(../images/main/img_main_kv.jpg) no-repeat center center/cover;
+}
+
+.main_kv .main_kv_text {
+  text-align: center;
+  color: #fff;
+}
+
+.main_kv .main_kv_text h2 {
+  font-family: "Nanum Myeongjo", serif;
 }
 
 .main_kv .mouse {
