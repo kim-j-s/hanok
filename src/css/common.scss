@@ -5,6 +5,13 @@
 @import '_component.scss';
 @import '_element.scss';
 
+/*
+.main_beauty,
+.main_wait,
+.main_map {
+    display: none;
+}
+*/
 
 .main_kv {
     position: relative;
@@ -91,28 +98,25 @@
     }
 }
 
+
+/* main_yw */
 .main_yw {
-    padding: 160px 0 245px 0;
+    padding: 120px 0 245px 0;
     background: #4d4d4d;
 }
 
-.yw-there {
+.yw-there.intro_text {
     width: 50%;
     margin-left: auto;
+    padding-left: 120px;
     color: #fff;
-    h3 {
-        font-size: 40px;
+    opacity: 0;
+    .desc {
+        padding: 14px 0 32px 0;
+        letter-spacing: 20px;
     }
-    .middle {
-        font-size: 12px;
-        letter-spacing: 10px;
-    }
-    .text {
-        margin-top: 20px;
-        font-size: 22px;
-        + .text {
-            margin-top: 10px;
-        }
+    &.on {
+        opacity: 1;
     }
 }
 
@@ -130,6 +134,73 @@
     to{
         opacity: 1;
         transform: perspective(500px) translate3d(0, 0, 0);
+    }
+}
+
+.yw_visual {
+    margin-top: 250px;
+    font-size: 0;
+    color: #fff;
+    .visual {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(50% + 120px);
+        text-align: right;
+        figure {
+            overflow: hidden;
+            img {
+                float: right;
+            }
+        }
+        .desc {
+            padding-top: 17px;
+            font-size: 20px;
+            line-height: 35px;
+        }
+    }
+    .cont {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(50% - 120px);
+        padding-top: 170px;
+        padding-left: 20px;
+        font-family: $mj;
+        .tit {
+            font-size: 26px;
+            line-height: 36px;
+            .line {
+                position: relative;
+                top: -2px;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 10px 0 7px;
+                width: 18px;
+                border-bottom: 2px solid #fff;
+
+            }
+        }
+        .sub {
+            position: relative;
+            display: block;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                border-bottom: 1px solid #fff;
+            }
+            em {
+                position: relative;
+                z-index: 1;
+                display: inline-block;
+                padding-right: 20px;
+                font-size: 16px;
+                line-height: 55px;
+                letter-spacing: 35px;
+                background: #4d4d4d;
+            }
+        }
     }
 }
 
@@ -158,14 +229,12 @@
         }
     }
 }
+/* main_yw */
+
 
 .main_beauty {
     height: 1200px;
-    background-image: url(../images/main/img_main_beauty.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
+    background: url(../images/main/img_main_beauty.jpg) no-repeat center center / cover;
     text-align: center;
     .inner {
         display: inline-block;
@@ -197,11 +266,7 @@
 
 .main_map {
     height: 1200px;
-    background-image: url(../images/main/img_main_map.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
+    background: url(../images/main/img_main_map.jpg) no-repeat center center / cover;
 }
 
 .main_nature {
@@ -222,17 +287,14 @@
     }
 }
 
-.main_yw,
-.main_beauty,
-.main_wait,
-.main_map {
-    display: none;
-}
+
 
 .main_culture {
     position: relative;
     min-height: 100vh;
-    padding-bottom: 130px;
+    padding-top: 130vh;
+    padding-bottom: 100px;
+    box-sizing: content-box;
     .intro {
         position: absolute;
         top: 0;
@@ -259,14 +321,88 @@
 .main_culture_item {
     position: relative;
     z-index: 1;
-    font-size: 0;
+    height: 100vh;
+    box-sizing: content-box;
     text-align: center;
-    padding-top: 200vh;
-    .mci {
-        position: relative;
-        width: 900px;
-        height: 900px;
-        background: blue;
+}
+.mci {
+    position: relative;
+    display: inline-block;
+    width: 900px;
+    height: 900px;
+    box-sizing: content-box;
+    .items {
+        position: absolute;
+        top: 300px;
+        left: 300px;
+        z-index: 2;
+        width: 300px;
+        height: 300px;
+        padding: 40px 0;
+        text-align: center;
+        font-family: $mj;
+        .img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        h4 {
+            position: relative;
+            padding-bottom: 5px;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 55px;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 22px;
+                border-bottom: 5px solid #000;
+            }
+        }
+        .text {
+            position: absolute;
+            left: 0;
+            bottom: 40px;
+            width: 100%;
+            font-size: 16px;
+            line-height: 22px;
+        }
+        &.ty1 {
+            z-index: 4;
+            background: #d3be89;
+        }
+        &.ty2 {
+            z-index: 5;
+            background: #c7c3ba;
+        }
+        &.ty3 {
+            z-index: 6;
+            background: #d3be89;  
+        }
+        &.ty4 {
+            background: #c7c3ba;
+        }
+        &.ty5 {
+            z-index: 10;
+            color: #fff;
+            background: #2a4d46;
+            h4 {
+                &::after {
+                    border-bottom: 5px solid #fff;
+                }
+            }
+        }
+    }
+    .imgs {
+        img {
+            position: absolute;
+            top: 300px;
+            left: 300px;
+        }
     }
 }
 
@@ -283,9 +419,6 @@
         font-size: 16px;
         line-height: 24px;
         letter-spacing: 25px;
-        > .end {
-            letter-spacing: normal;
-        }
     }
     .text {
         font-size: 20px;

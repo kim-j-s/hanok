@@ -1,13 +1,4 @@
-
 (function($){
-
-    
-
-
-
-
-
-
 
     // 영월 그곳
     function textWave() {
@@ -15,6 +6,7 @@
         var animationDelay = 10;
         var count = 0;
         $waveText.each(function(e){
+            
             var newDom = '';
             for(let i = 0; i < $(this).text().length; i++)
             {
@@ -31,6 +23,21 @@
     }
 
     $(function(){
-        textWave();
+        console.log('xeeexx');
     });
+
+    $(window).on('scroll', function(){
+        const wTop = $('html, body').scrollTop();
+        const wHeight = $(window).outerHeight();
+
+        let of = $('.main_yw').offset().top;
+        if (wTop > of - (wHeight * 0.6) && !$('.main_yw').hasClass('passed')) {
+            $('.yw-there').addClass('on');
+            $('.main_yw').addClass('passed');
+            textWave();
+        }
+    });
+
+
 })(jQuery);
+
