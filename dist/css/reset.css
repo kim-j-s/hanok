@@ -97,6 +97,7 @@ body {
   word-break: keep-all;
   font-size: 10px;
   overflow: auto;
+  letter-spacing: -2px;
 }
 
 ol,

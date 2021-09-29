@@ -9,12 +9,35 @@
 .main_kv {
     position: relative;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: url(../images/main/img_main_kv.jpg) no-repeat center center / cover;
     .main_kv_text {
         text-align: center;
+        display: inline-block;
         color: #fff;
         h2 {
             font-family: $mj;
+            font-weight: 700;
+            font-size: 45px;
+            line-height: 65px;
+            white-space: nowrap;
+            text-align: left;
+            .line {
+                display: block;
+            }
+            strong {
+                display: block;
+                padding: 40px 0;
+                font-size: 80px;
+                text-align: right;
+            }
+        }
+        .desc {
+            text-align: right;
+            font-size: 20px;
+            line-height: 30px;
         }
     }
 
@@ -28,7 +51,11 @@
         text-align: center;
         i {
             display: block;
-            margin-bottom: 17px;
+            margin-bottom: 15px;
+            font-family: $rbt;
+            font-size: 20px;
+            letter-spacing: normal;
+            line-height: 22px;
         }
         em {
             position: relative;
@@ -66,7 +93,6 @@
 
 .main_yw {
     padding: 160px 0 245px 0;
-    font-weight: 50px;
     background: #4d4d4d;
 }
 
@@ -107,6 +133,32 @@
     }
 }
 
+.thr_mark {
+    text-align: center;
+    .inner {
+        display: inline-block;
+        white-space: nowrap;
+        h3 {
+            position: relative;
+            padding: 25px 0 30px 0;
+            font-family: $mj;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 1;
+            color: #fff;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 25px;
+                border-bottom: 3px solid #fff;
+            }
+        }
+    }
+}
+
 .main_beauty {
     height: 1200px;
     background-image: url(../images/main/img_main_beauty.jpg);
@@ -114,6 +166,28 @@
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+    text-align: center;
+    .inner {
+        display: inline-block;
+        width: 800px;
+        color: #fff;
+        h3 {
+            font-family: $mj;
+            font-weight: 400;
+            font-size: 50px;
+        }
+        .desc {
+            padding: 14px 0 45px 0;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 25px;
+        }
+        .text {
+            font-size: 20px;
+            line-height: 35px;
+            text-align: left;
+        }
+    }
 }
 
 .main_wait {
@@ -130,4 +204,52 @@
     background-attachment: fixed;
 }
 
+.main_nature {
+    padding: 200px 0 300px 0;
+    background: #2a4d46;
+}
 
+.main_yw,
+.main_beauty,
+.main_wait,
+.main_map,
+.main_nature {
+    display: none;
+}
+
+.main_culture {
+    position: relative;
+    min-height: 100%;
+    .intro {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .inner {
+            display: inline-block;
+            width: 800px;
+            text-align: center;
+            h3 {
+                font-family: $mj;
+                font-weight: 400;
+                font-size: 50px;
+            }
+            .desc {
+                padding: 14px 0 45px 0;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 25px;
+            }
+            .text {
+                font-size: 20px;
+                line-height: 35px;
+                text-align: left;
+            }
+        }
+
+    }
+}

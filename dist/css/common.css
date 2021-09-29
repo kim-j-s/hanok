@@ -13,12 +13,116 @@ header {
   left: 0;
   width: 100%;
   padding: 10px;
-  z-index: 1;
+  z-index: 10;
+}
+
+header > .inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header > .inner h1 {
+  display: inline-block;
+}
+
+header > .inner h1 a {
+  display: block;
+  width: 256px;
+  height: 48px;
+  background: url(../images/common/logo.png) no-repeat;
+  overflow: hidden;
+  text-indent: -999px;
+}
+
+header > .inner .gnb {
+  display: inline-block;
+}
+
+.menu {
+  display: inline-block;
+}
+
+.menu > span {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  text-indent: -999px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.menu > span::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 18px;
+  width: 24px;
+  border-bottom: 2px solid #000;
+}
+
+.menu > span::after {
+  content: '';
+  position: absolute;
+  bottom: 24px;
+  left: 18px;
+  width: 24px;
+  border-bottom: 2px solid #000;
 }
 
 /* // header */
-/* header */
-/* // header */
+footer {
+  padding: 80px 0 70px 0;
+  background: #2a4c46;
+}
+
+footer .inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+footer .inner .cont {
+  position: relative;
+  padding-left: 250px;
+  color: #d3be89;
+  background: url(../images/common/f_logo.png) no-repeat left center;
+}
+
+footer .inner .cont::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 180px;
+  height: 100%;
+  border-left: 1px solid #d3be89;
+}
+
+footer .inner .cont h3 {
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 40px;
+}
+
+footer .inner .cont address {
+  padding: 9px 0 12px 0;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+footer .inner .cont .copy {
+  font-size: 15px;
+  letter-spacing: -1px;
+}
+
 /* component */
 /* // component */
 /* element */
@@ -28,16 +132,51 @@ header {
 .main_kv {
   position: relative;
   height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: url(../images/main/img_main_kv.jpg) no-repeat center center/cover;
 }
 
 .main_kv .main_kv_text {
   text-align: center;
+  display: inline-block;
   color: #fff;
 }
 
 .main_kv .main_kv_text h2 {
   font-family: "Nanum Myeongjo", serif;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 65px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.main_kv .main_kv_text h2 .line {
+  display: block;
+}
+
+.main_kv .main_kv_text h2 strong {
+  display: block;
+  padding: 40px 0;
+  font-size: 80px;
+  text-align: right;
+}
+
+.main_kv .main_kv_text .desc {
+  text-align: right;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .main_kv .mouse {
@@ -54,7 +193,11 @@ header {
 
 .main_kv .mouse i {
   display: block;
-  margin-bottom: 17px;
+  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  letter-spacing: normal;
+  line-height: 22px;
 }
 
 .main_kv .mouse em {
@@ -103,7 +246,6 @@ header {
 
 .main_yw {
   padding: 160px 0 245px 0;
-  font-weight: 50px;
   background: #4d4d4d;
 }
 
@@ -165,6 +307,37 @@ header {
   }
 }
 
+.thr_mark {
+  text-align: center;
+}
+
+.thr_mark .inner {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.thr_mark .inner h3 {
+  position: relative;
+  padding: 25px 0 30px 0;
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+  color: #fff;
+}
+
+.thr_mark .inner h3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 25px;
+  border-bottom: 3px solid #fff;
+}
+
 .main_beauty {
   height: 1200px;
   background-image: url(../images/main/img_main_beauty.jpg);
@@ -172,6 +345,32 @@ header {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  text-align: center;
+}
+
+.main_beauty .inner {
+  display: inline-block;
+  width: 800px;
+  color: #fff;
+}
+
+.main_beauty .inner h3 {
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 400;
+  font-size: 50px;
+}
+
+.main_beauty .inner .desc {
+  padding: 14px 0 45px 0;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 25px;
+}
+
+.main_beauty .inner .text {
+  font-size: 20px;
+  line-height: 35px;
+  text-align: left;
 }
 
 .main_wait {
@@ -186,4 +385,67 @@ header {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.main_nature {
+  padding: 200px 0 300px 0;
+  background: #2a4d46;
+}
+
+.main_yw,
+.main_beauty,
+.main_wait,
+.main_map,
+.main_nature {
+  display: none;
+}
+
+.main_culture {
+  position: relative;
+  min-height: 100%;
+}
+
+.main_culture .intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_culture .intro .inner {
+  display: inline-block;
+  width: 800px;
+  text-align: center;
+}
+
+.main_culture .intro .inner h3 {
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 400;
+  font-size: 50px;
+}
+
+.main_culture .intro .inner .desc {
+  padding: 14px 0 45px 0;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 25px;
+}
+
+.main_culture .intro .inner .text {
+  font-size: 20px;
+  line-height: 35px;
+  text-align: left;
 }

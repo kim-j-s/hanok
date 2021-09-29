@@ -6,6 +6,56 @@ header {
     left: 0;
     width: 100%;
     padding: 10px;
-    z-index: 1;
+    z-index: 10;
+    > .inner {
+        display: flex;
+        justify-content: space-between;
+        width: 1200px;
+        margin: 0 auto;
+        h1 {
+            display: inline-block;
+            a {
+                display: block;
+                width: 256px;
+                height: 48px;
+                background: url(../images/common/logo.png) no-repeat;
+                overflow: hidden;
+                text-indent: -999px;
+            }
+        }
+        .gnb {
+            display: inline-block;
+        }
+    }
+}
+
+.menu {
+    display: inline-block;
+    > span {
+        position: relative;
+        display: block;
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        text-indent: -999px;
+        background: #fff;
+        border-radius: 50%;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 18px;
+            width: 24px;
+            border-bottom: 2px solid #000;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 24px;
+            left: 18px;
+            width: 24px;
+            border-bottom: 2px solid #000;
+        }
+    }
 }
 /* // header */

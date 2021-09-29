@@ -1,6 +1,36 @@
-
-/* header */
-header {
-
+footer {
+    padding: 80px 0 70px 0;
+    background: #2a4c46;
+    .inner {
+        width: 1200px;
+        margin: 0 auto;
+        .cont {
+            position: relative;
+            padding-left: 250px;
+            color: #d3be89;
+            background: url(../images/common/f_logo.png) no-repeat left center;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 180px;
+                height: 100%;
+                border-left: 1px solid #d3be89;
+            }
+            h3 {
+                font-weight: 700;
+                font-size: 27px;
+                line-height: 40px;
+            }
+            address {
+                padding: 9px 0 12px 0;
+                font-size: 20px;
+                line-height: 30px;
+            }
+            .copy {
+                font-size: 15px;
+                letter-spacing: -1px;
+            }
+        }
+    }
 }
-/* // header */
