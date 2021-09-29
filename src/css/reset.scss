@@ -86,18 +86,15 @@ section {
 }
 
 html {
-    height: 100%;
-    overflow: hidden;
+    
 }
 
 body {
-    height: 100%;
     -webkit-text-size-adjust: none;
     font-family: 'Noto Sans Kr', sans-serif;
-    word-wrap: break-word;
-    word-break: keep-all;
+    /* word-wrap: break-word;
+    word-break: keep-all; */
     font-size: 10px;
-    overflow: auto;
     letter-spacing: -2px;
 }
 

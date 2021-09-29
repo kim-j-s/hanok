@@ -8,7 +8,7 @@
 
 .main_kv {
     position: relative;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,25 +207,38 @@
 .main_nature {
     padding: 200px 0 300px 0;
     background: #2a4d46;
+    text-align: center;
+    .intro {
+        display: inline-block;
+        width: 820px;
+        text-align: right;
+        color: #fff;
+        .desc {
+            text-align: right;
+        }
+        .text {
+            text-align: left;
+        }
+    }
 }
 
 .main_yw,
 .main_beauty,
 .main_wait,
-.main_map,
-.main_nature {
+.main_map {
     display: none;
 }
 
 .main_culture {
     position: relative;
-    min-height: 100%;
+    min-height: 100vh;
+    padding-bottom: 130px;
     .intro {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -233,23 +246,50 @@
             display: inline-block;
             width: 800px;
             text-align: center;
-            h3 {
-                font-family: $mj;
-                font-weight: 400;
-                font-size: 50px;
-            }
-            .desc {
-                padding: 14px 0 45px 0;
-                font-size: 16px;
-                line-height: 24px;
-                letter-spacing: 25px;
-            }
             .text {
-                font-size: 20px;
-                line-height: 35px;
                 text-align: left;
             }
         }
+        &.on {
+            position: fixed;
+        }
+    }
+}
 
+.main_culture_item {
+    position: relative;
+    z-index: 1;
+    font-size: 0;
+    text-align: center;
+    padding-top: 200vh;
+    .mci {
+        position: relative;
+        width: 900px;
+        height: 900px;
+        background: blue;
+    }
+}
+
+
+
+.intro_text {
+    h3 {
+        font-family: $mj;
+        font-weight: 400;
+        font-size: 50px;
+    }
+    .desc {
+        padding: 14px 0 45px 0;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 25px;
+        > .end {
+            letter-spacing: normal;
+        }
+    }
+    .text {
+        font-size: 20px;
+        line-height: 35px;
+        text-align: left;
     }
 }

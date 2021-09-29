@@ -1,4 +1,13 @@
+
 (function($){
+
+    
+
+
+
+
+
+
 
     // 영월 그곳
     function textWave() {
@@ -22,7 +31,6 @@
     }
 
     $(function(){
-        console.log('xx');
         textWave();
     });
 })(jQuery);
