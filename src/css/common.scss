@@ -204,6 +204,61 @@
     }
 }
 
+.yw_visual2 {
+    margin-top: 160px;
+    text-align: center;
+    .incont {
+        display: inline-flex;
+        align-items: stretch;
+        .text {
+            align-self: flex-end;
+            font-size: 20px;
+            line-height: 35px;
+            color: #fff;
+            text-align: right;
+        }
+        .cont {
+            width: 772px;
+            height: 908px;
+            margin-left: 47px;
+            padding-top: 105px;
+            font-family: $mj;
+            text-align: center;
+            background: url(../images/main/img_yw02.jpg) no-repeat;
+            .cont_text {
+                display: inline-block;
+            }
+            .text1 {
+                display: block;
+                font-size: 20px;
+                line-height: 20px;
+                letter-spacing: 33px;
+            }
+            .text2 {
+                display: inline-block;
+                margin-top: 34px;
+                font-size: 50px;
+                line-height: 65px;
+                text-align: left;
+                overflow: hidden;
+                .line {
+                    position: relative;
+                    display: block;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        margin-left: 10px;
+                        width: 100%;
+                        border-bottom: 1px solid #000;
+                    }
+                }                
+
+            }
+        }
+    }
+}
+
 .thr_mark {
     text-align: center;
     .inner {
@@ -239,6 +294,7 @@
     .inner {
         display: inline-block;
         width: 800px;
+        padding-top: 600px;
         color: #fff;
         h3 {
             font-family: $mj;

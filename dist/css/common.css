@@ -388,6 +388,76 @@ footer .inner .cont .copy {
   background: #4d4d4d;
 }
 
+.yw_visual2 {
+  margin-top: 160px;
+  text-align: center;
+}
+
+.yw_visual2 .incont {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.yw_visual2 .incont .text {
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+  font-size: 20px;
+  line-height: 35px;
+  color: #fff;
+  text-align: right;
+}
+
+.yw_visual2 .incont .cont {
+  width: 772px;
+  height: 908px;
+  margin-left: 47px;
+  padding-top: 105px;
+  font-family: "Nanum Myeongjo", serif;
+  text-align: center;
+  background: url(../images/main/img_yw02.jpg) no-repeat;
+}
+
+.yw_visual2 .incont .cont .cont_text {
+  display: inline-block;
+}
+
+.yw_visual2 .incont .cont .text1 {
+  display: block;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 33px;
+}
+
+.yw_visual2 .incont .cont .text2 {
+  display: inline-block;
+  margin-top: 34px;
+  font-size: 50px;
+  line-height: 65px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.yw_visual2 .incont .cont .text2 .line {
+  position: relative;
+  display: block;
+}
+
+.yw_visual2 .incont .cont .text2 .line:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+
 .thr_mark {
   text-align: center;
 }
@@ -429,6 +499,7 @@ footer .inner .cont .copy {
 .main_beauty .inner {
   display: inline-block;
   width: 800px;
+  padding-top: 600px;
   color: #fff;
 }
 
