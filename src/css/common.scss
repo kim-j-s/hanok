@@ -18,6 +18,11 @@
 }
 
 .intro_text {
+    opacity: 0;
+    transition: 2.5s;
+    &.on {
+        opacity: 1;
+    }
     h3 {
         font-family: $mj;
         font-weight: 400;
@@ -50,6 +55,10 @@
 }
 
 .title_text {
+    position: relative;
+    top: -150px;
+    opacity: 0;
+    transition: 3.5s;
     font-family: $mj;
     .top {
         display: block;
@@ -64,6 +73,10 @@
         line-height: 65px;
         text-align: left;
         overflow: hidden;
+    }
+    &.on {
+        top: 0;
+        opacity: 1;
     }
 }
 
@@ -84,21 +97,58 @@
             font-size: 45px;
             line-height: 65px;
             white-space: nowrap;
-            text-align: left;
+            text-align: left;            
             .line {
+                position: relative;
                 display: block;
+                overflow: hidden;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    width: 100%;
+                    margin-left: 12px;
+                    border-bottom: 3px solid #fff;
+                }
             }
             strong {
                 display: block;
                 padding: 40px 0;
                 font-size: 80px;
                 text-align: right;
+                span {
+                    opacity: 0;
+                    animation: thehanok 5s forwards;
+                    &:nth-child(2) {
+                        animation-delay: 1s;
+                    }
+                    &:nth-child(3) {
+                        animation-delay: 2s;
+                    }
+                }
+            }
+            .top {
+                position: relative;
+                left: -350px;
+                display: block;
+                opacity: 0;
+                animation-delay: 2.5s;
+                animation-duration: 4s;
+                animation-name: thehanoktop;
+                animation-fill-mode: forwards;
             }
         }
         .desc {
+            position: relative;
+            right: -350px;
             text-align: right;
             font-size: 20px;
             line-height: 30px;
+            opacity: 0;
+            animation-delay: 2.5s;
+            animation-duration: 4s;
+            animation-name: thehanokbottom;
+            animation-fill-mode: forwards;
         }
     }
 
@@ -139,6 +189,39 @@
         }
     }
 }
+
+@keyframes thehanok {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes thehanoktop {
+    0% {
+        opacity: 0;
+        left: -350px;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes thehanokbottom {
+    0% {
+        opacity: 0;
+        right: -350px;
+    }
+    100% {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+
 
 @keyframes mousedown {
     0% {
@@ -319,27 +402,17 @@
 
 .main_beauty {
     height: 1200px;
+    padding-top: 600px;
     background: url(../images/main/img_main_beauty.jpg) no-repeat center center / cover;
     text-align: center;
     .inner {
         display: inline-block;
         width: 800px;
-        padding-top: 600px;
         color: #fff;
-        h3 {
-            font-family: $mj;
-            font-weight: 400;
-            font-size: 50px;
-        }
         .desc {
-            padding: 14px 0 45px 0;
-            font-size: 16px;
-            line-height: 24px;
             letter-spacing: 25px;
         }
         .text {
-            font-size: 20px;
-            line-height: 35px;
             text-align: left;
         }
     }
@@ -355,7 +428,7 @@
         left: 0;
         width: 100%;
         text-align: center;
-        &.on {
+        &.fixed {
             position: fixed;            
         }
         .incont.intro_text {
@@ -373,6 +446,8 @@
 }
 
 .wait_visual1 {
+    position: relative;
+    z-index: 1;
     font-size: 0;
     text-align: right;
     .incont {
@@ -405,6 +480,8 @@
 }
 
 .wait_visual2 {
+    position: relative;
+    z-index: 1;
     margin-top: 280px;
     font-size: 0;
     figure {
@@ -419,16 +496,20 @@
         padding-left: 40px;
         font-size: 20px;
         line-height: 35px;
+        background: #d3be89;
     }
 }
 
 .wait_visual3 {
+    position: relative;
+    z-index: 1;
     margin-top: 280px;
     font-size: 0;
     text-align: center;
     .incont {
         display: inline-flex;
         align-items: stretch;
+        background: #d3be89;
     }
     .wv_left {
         display: inline-block;
@@ -451,11 +532,14 @@
 }
 
 .wait_visual4 {
+    position: relative;
+    z-index: 1;
     margin-top: 270px;
     text-align: center;
     &_top {
         display: inline-block;
         font-family: $mj;
+        background: #d3be89;
         strong {
             .text_line {
                 &:after {
@@ -524,6 +608,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        &.fixed {
+            position: fixed;
+        }
         .inner {
             display: inline-block;
             width: 800px;
@@ -531,10 +618,7 @@
             .text {
                 text-align: left;
             }
-        }
-        &.on {
-            position: fixed;
-        }
+        }        
     }
 }
 

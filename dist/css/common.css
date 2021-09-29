@@ -140,6 +140,16 @@ footer .inner .cont .copy {
   letter-spacing: normal;
 }
 
+.intro_text {
+  opacity: 0;
+  -webkit-transition: 2.5s;
+  transition: 2.5s;
+}
+
+.intro_text.on {
+  opacity: 1;
+}
+
 .intro_text h3 {
   font-family: "Nanum Myeongjo", serif;
   font-weight: 400;
@@ -174,6 +184,11 @@ footer .inner .cont .copy {
 }
 
 .title_text {
+  position: relative;
+  top: -150px;
+  opacity: 0;
+  -webkit-transition: 3.5s;
+  transition: 3.5s;
   font-family: "Nanum Myeongjo", serif;
 }
 
@@ -191,6 +206,11 @@ footer .inner .cont .copy {
   line-height: 65px;
   text-align: left;
   overflow: hidden;
+}
+
+.title_text.on {
+  top: 0;
+  opacity: 1;
 }
 
 .main_kv {
@@ -227,7 +247,18 @@ footer .inner .cont .copy {
 }
 
 .main_kv .main_kv_text h2 .line {
+  position: relative;
   display: block;
+  overflow: hidden;
+}
+
+.main_kv .main_kv_text h2 .line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-left: 12px;
+  border-bottom: 3px solid #fff;
 }
 
 .main_kv .main_kv_text h2 strong {
@@ -237,10 +268,52 @@ footer .inner .cont .copy {
   text-align: right;
 }
 
+.main_kv .main_kv_text h2 strong span {
+  opacity: 0;
+  -webkit-animation: thehanok 5s forwards;
+          animation: thehanok 5s forwards;
+}
+
+.main_kv .main_kv_text h2 strong span:nth-child(2) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.main_kv .main_kv_text h2 strong span:nth-child(3) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.main_kv .main_kv_text h2 .top {
+  position: relative;
+  left: -350px;
+  display: block;
+  opacity: 0;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-name: thehanoktop;
+          animation-name: thehanoktop;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 .main_kv .main_kv_text .desc {
+  position: relative;
+  right: -350px;
   text-align: right;
   font-size: 20px;
   line-height: 30px;
+  opacity: 0;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-name: thehanokbottom;
+          animation-name: thehanokbottom;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .main_kv .mouse {
@@ -284,6 +357,68 @@ footer .inner .cont .copy {
   border-radius: 50px;
   -webkit-animation: mousedown 1.5s infinite;
           animation: mousedown 1.5s infinite;
+}
+
+@-webkit-keyframes thehanok {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes thehanok {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes thehanoktop {
+  0% {
+    opacity: 0;
+    left: -350px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes thehanoktop {
+  0% {
+    opacity: 0;
+    left: -350px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@-webkit-keyframes thehanokbottom {
+  0% {
+    opacity: 0;
+    right: -350px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@keyframes thehanokbottom {
+  0% {
+    opacity: 0;
+    right: -350px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
 }
 
 @-webkit-keyframes mousedown {
@@ -515,6 +650,7 @@ footer .inner .cont .copy {
 /* main_yw */
 .main_beauty {
   height: 1200px;
+  padding-top: 600px;
   background: url(../images/main/img_main_beauty.jpg) no-repeat center center/cover;
   text-align: center;
 }
@@ -522,26 +658,14 @@ footer .inner .cont .copy {
 .main_beauty .inner {
   display: inline-block;
   width: 800px;
-  padding-top: 600px;
   color: #fff;
 }
 
-.main_beauty .inner h3 {
-  font-family: "Nanum Myeongjo", serif;
-  font-weight: 400;
-  font-size: 50px;
-}
-
 .main_beauty .inner .desc {
-  padding: 14px 0 45px 0;
-  font-size: 16px;
-  line-height: 24px;
   letter-spacing: 25px;
 }
 
 .main_beauty .inner .text {
-  font-size: 20px;
-  line-height: 35px;
   text-align: left;
 }
 
@@ -559,7 +683,7 @@ footer .inner .cont .copy {
   text-align: center;
 }
 
-.main_wait_top.on {
+.main_wait_top.fixed {
   position: fixed;
 }
 
@@ -578,6 +702,8 @@ footer .inner .cont .copy {
 }
 
 .wait_visual1 {
+  position: relative;
+  z-index: 1;
   font-size: 0;
   text-align: right;
 }
@@ -619,6 +745,8 @@ footer .inner .cont .copy {
 }
 
 .wait_visual2 {
+  position: relative;
+  z-index: 1;
   margin-top: 280px;
   font-size: 0;
 }
@@ -636,9 +764,12 @@ footer .inner .cont .copy {
   padding-left: 40px;
   font-size: 20px;
   line-height: 35px;
+  background: #d3be89;
 }
 
 .wait_visual3 {
+  position: relative;
+  z-index: 1;
   margin-top: 280px;
   font-size: 0;
   text-align: center;
@@ -653,6 +784,7 @@ footer .inner .cont .copy {
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  background: #d3be89;
 }
 
 .wait_visual3 .wv_left {
@@ -678,6 +810,8 @@ footer .inner .cont .copy {
 }
 
 .wait_visual4 {
+  position: relative;
+  z-index: 1;
   margin-top: 270px;
   text-align: center;
 }
@@ -685,6 +819,7 @@ footer .inner .cont .copy {
 .wait_visual4_top {
   display: inline-block;
   font-family: "Nanum Myeongjo", serif;
+  background: #d3be89;
 }
 
 .wait_visual4_top strong .text_line:after {
@@ -769,6 +904,10 @@ footer .inner .cont .copy {
           align-items: center;
 }
 
+.main_culture .intro.fixed {
+  position: fixed;
+}
+
 .main_culture .intro .inner {
   display: inline-block;
   width: 800px;
@@ -777,10 +916,6 @@ footer .inner .cont .copy {
 
 .main_culture .intro .inner .text {
   text-align: left;
-}
-
-.main_culture .intro.on {
-  position: fixed;
 }
 
 .main_culture_item {

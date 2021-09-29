@@ -5,8 +5,7 @@
         var $waveText = $('.text-wave');
         var animationDelay = 10;
         var count = 0;
-        $waveText.each(function(e){
-            
+        $waveText.each(function(e){            
             var newDom = '';
             for(let i = 0; i < $(this).text().length; i++)
             {
@@ -23,7 +22,7 @@
     }
 
     $(function(){
-        console.log('xeeexx');
+        // ready
     });
 
     $(window).on('scroll', function(){
@@ -36,8 +35,26 @@
             $('.main_yw').addClass('passed');
             textWave();
         }
+        
+        const $titleText = $('.title_text');
+        const $titlePoint = $titleText.length;
+        for (var i = 0; i < $titlePoint; i++)
+        {
+            const point = $('.title_text').eq(i).offset().top;
+            if ( wTop > point - (wHeight * 0.75)) {
+                $('.title_text').eq(i).addClass('on');
+            }
+        }
+
+        const $introText = $('.intro_text');
+        const $introPoint = $introText.length;
+        for (var i = 0; i < $introPoint; i++)
+        {
+            const point = $('.intro_text').eq(i).offset().top;
+            if ( wTop > point - (wHeight * 0.75)) {
+                $('.intro_text').eq(i).addClass('on');
+            }
+        }
     });
-
-
 })(jQuery);
 

@@ -3,14 +3,42 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
+        // wait 위치
+        var mainNature = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".main_beauty",
+                onLeave: (function() {
+                    $('.main_wait_top').addClass('fixed');
+                }),
+                onEnterBack: (function() {
+                    $('.main_wait_top').removeClass('fixed');
+                })
+            }
+        });
+        
+        var mainNature = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".main_wait",
+                end: "bottom 1800px",
+                onLeave: (function() {
+                    $('.main_wait_top').removeClass('fixed');
+                }),
+                onEnterBack: (function() {
+                    $('.main_wait_top').addClass('fixed');
+                })
+            }
+        });
+        // wait 위치
+
         var mainNature = gsap.timeline({
             scrollTrigger: {
                 trigger: ".main_nature",
+                markers: true,
                 onLeave: (function() {
-                    $('.main_culture > .intro').addClass('on');
+                    $('.main_culture > .intro').addClass('fixed');
                 }),
                 onEnterBack: (function() {
-                    $('.main_culture > .intro').removeClass('on');
+                    $('.main_culture > .intro').removeClass('fixed');
                 })
             }
         });
@@ -20,10 +48,10 @@
                 trigger: ".main_culture",
                 //markers: true,
                 onLeave: (function() {
-                    $('.main_culture > .intro').removeClass('on');
+                    $('.main_culture > .intro').removeClass('fixed');
                 }),
                 onEnterBack: (function() {
-                    $('.main_culture > .intro').addClass('on');
+                    $('.main_culture > .intro').addClass('fixed');
                 })
             }
         });
