@@ -13,7 +13,7 @@
                 //pin: '.wrap',
                 pin: true,
                 scrub: 1,
-                markers: true,
+                //markers: true,
             }
         });
         

@@ -30,9 +30,24 @@
         });        
     }
 
+    function menuOpen() {
+        $('.menu').on('click', function(){
+            if ( $(this).hasClass('on') ) {
+                $(this).removeClass('on');
+                $('header').removeClass('on');
+                $('nav').removeClass('on');
+            } else {
+                $(this).addClass('on');
+                $('header').addClass('on');
+                $('nav').addClass('on');
+            }
+        });
+    }
+
     $(function(){
-        // ready
         pageTop();
+        menuOpen();
+        // ready
     });
 
     $(window).on('scroll', function(){
@@ -57,9 +72,9 @@
         }
 
         if (wTop > 70) {
-            $('header').addClass('on');
+            $('header').addClass('fixed');
         } else {
-            $('header').removeClass('on');
+            $('header').removeClass('fixed');
         }
 
 
