@@ -4,6 +4,7 @@
         gsap.registerPlugin(ScrollTrigger);
 
         // wait 위치
+        /*
         var mainNature = gsap.timeline({
             scrollTrigger: {
                 trigger: ".main_beauty",
@@ -28,12 +29,13 @@
                 })
             }
         });
+        */
         // wait 위치
 
         var mainNature = gsap.timeline({
             scrollTrigger: {
                 trigger: ".main_nature",
-                markers: true,
+                //markers: true,
                 onLeave: (function() {
                     $('.main_culture > .intro').addClass('fixed');
                 }),

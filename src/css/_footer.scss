@@ -1,7 +1,24 @@
+.page_top {
+    position: absolute;
+    left: 50%;
+    top: -70px;
+    margin-left: 530px;
+    > span {
+        position: relative;
+        display: block;
+        width: 70px;
+        height: 70px;
+        background: #2b2d39 url(../images/common/bg_pagetop.png) no-repeat left 35px center;
+        overflow: hidden;
+        text-indent: -999px;
+    }
+}
 footer {
+    position: relative;
     padding: 80px 0 70px 0;
     background: #2a4c46;
     .inner {
+        position: relative;
         width: 1200px;
         margin: 0 auto;
         .cont {

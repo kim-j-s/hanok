@@ -21,8 +21,19 @@
         });
     }
 
+    // page top
+    function pageTop() {
+        $('.page_top').on('click', function(){
+            $('html, body').animate({
+                scrollTop: 0
+            }, 500);
+        });
+        
+    }
+
     $(function(){
         // ready
+        pageTop();
     });
 
     $(window).on('scroll', function(){
@@ -30,7 +41,7 @@
         const wHeight = $(window).outerHeight();
 
         let of = $('.main_yw').offset().top;
-        if (wTop > of - (wHeight * 0.6) && !$('.main_yw').hasClass('passed')) {
+        if (wTop > of - (wHeight * 0.7) && !$('.main_yw').hasClass('passed')) {
             $('.yw-there').addClass('on');
             $('.main_yw').addClass('passed');
             textWave();
@@ -41,7 +52,7 @@
         for (var i = 0; i < $titlePoint; i++)
         {
             const point = $('.title_text').eq(i).offset().top;
-            if ( wTop > point - (wHeight * 0.75)) {
+            if ( wTop > point - (wHeight * 0.8)) {
                 $('.title_text').eq(i).addClass('on');
             }
         }
@@ -51,7 +62,7 @@
         for (var i = 0; i < $introPoint; i++)
         {
             const point = $('.intro_text').eq(i).offset().top;
-            if ( wTop > point - (wHeight * 0.75)) {
+            if ( wTop > point - (wHeight * 0.8)) {
                 $('.intro_text').eq(i).addClass('on');
             }
         }
