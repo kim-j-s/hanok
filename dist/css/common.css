@@ -53,6 +53,7 @@ header.fixed {
 
 header.on {
   position: fixed;
+  top: 70px;
 }
 
 header.on h1 {

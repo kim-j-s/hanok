@@ -2,8 +2,6 @@
     
     $(window).on('load', function(){
 
-        console.log('sdf');
-
         gsap.registerPlugin(ScrollTrigger);
         var seasonImgs = gsap.timeline({
             scrollTrigger: {
@@ -16,12 +14,7 @@
                 //markers: true,
             }
         });
-        
         seasonImgs.to(".season_img_cont", {y: -1080, ease: "none"})
-    
     });
-    
-    
-    
 })(jQuery);
 
