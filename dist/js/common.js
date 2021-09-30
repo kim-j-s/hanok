@@ -27,8 +27,7 @@
             $('html, body').animate({
                 scrollTop: 0
             }, 500);
-        });
-        
+        });        
     }
 
     $(function(){
@@ -46,26 +45,25 @@
             $('.main_yw').addClass('passed');
             textWave();
         }
-        
-        const $titleText = $('.title_text');
-        const $titlePoint = $titleText.length;
-        for (var i = 0; i < $titlePoint; i++)
+
+        const $offsetEvent = $('.offset_event');
+        const $offsetEventPoint = $offsetEvent.length;
+        for (var i = 0; i < $offsetEventPoint; i++)
         {
-            const point = $('.title_text').eq(i).offset().top;
+            const point = $('.offset_event').eq(i).offset().top;
             if ( wTop > point - (wHeight * 0.8)) {
-                $('.title_text').eq(i).addClass('on');
+                $('.offset_event').eq(i).addClass('on');
             }
         }
 
-        const $introText = $('.intro_text');
-        const $introPoint = $introText.length;
-        for (var i = 0; i < $introPoint; i++)
-        {
-            const point = $('.intro_text').eq(i).offset().top;
-            if ( wTop > point - (wHeight * 0.8)) {
-                $('.intro_text').eq(i).addClass('on');
-            }
+        if (wTop > 70) {
+            $('header').addClass('on');
+        } else {
+            $('header').removeClass('on');
         }
+
+
+
     });
 })(jQuery);
 

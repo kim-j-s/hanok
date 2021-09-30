@@ -1,8 +1,8 @@
 
 /* header */
 header {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 70px;
     left: 0;
     width: 100%;
     padding: 10px;
@@ -26,6 +26,10 @@ header {
         .gnb {
             display: inline-block;
         }
+    }
+    &.on {
+        position: fixed;
+        top: 0;
     }
 }
 

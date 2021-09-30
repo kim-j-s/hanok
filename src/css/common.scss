@@ -2,8 +2,6 @@
 @import '_common.scss';
 @import '_header.scss';
 @import '_footer.scss';
-@import '_component.scss';
-@import '_element.scss';
 
 .end {
     letter-spacing: normal;
@@ -258,7 +256,6 @@
     from{
         opacity: 0;
         transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
-        /* transform: perspective(500px) translate3d(0, -50px, -150px) rotate3d(1, -1, 0, 35deg); */
     }
     to{
         opacity: 1;
@@ -275,12 +272,14 @@
         vertical-align: top;
         width: calc(50% + 120px);
         text-align: right;
-        figure {
+        .imgs {
+            position: relative;
+            height: 540px;
             overflow: hidden;
             img {
                 display: block;
-                width: 100%;
-                height: 100%;
+                /* width: 100%;
+                height: 100%; */
             }
         }
         .desc {
@@ -414,6 +413,7 @@
     position: relative;
     padding: 646px 0 295px 0;
     background: #d3be89;
+    overflow: hidden;
     &_top {
         position: absolute;
         top: 200px;
@@ -448,6 +448,11 @@
         width: calc(50% + 174px);
         height: 600px;
         background: url(../images/main/img_wait01.jpg) no-repeat center center / cover;
+        opacity: 0;
+        transition: 1.5s;
+        &.on {
+            opacity: 1;
+        }
         .word {
             display: inline-block;
             font-family: $mj;
@@ -477,18 +482,35 @@
     margin-top: 280px;
     font-size: 0;
     figure {
+        position: relative;
+        left: -300px;
         display: inline-block;
         vertical-align: top;
         width: 680px;
+        transition: 1.5s;
+        opacity: 0;
     }
     .text {
+        position: relative;
+        right: -300px;
         display: inline-block;
         vertical-align: top;
         width: calc(100% - 680px);
         padding-left: 40px;
         font-size: 20px;
         line-height: 35px;
-        background: #d3be89;
+        transition: 1.5s;
+        opacity: 0;
+    }
+    &.on {
+        figure {
+            left: 0;
+            opacity: 1;
+        }
+        .text {
+            right: 0;
+            opacity: 1;
+        }
     }
 }
 
@@ -504,21 +526,45 @@
         background: #d3be89;
     }
     .wv_left {
+        position: relative;
+        top: -300px;
         display: inline-block;
         vertical-align: top;
+        opacity: 0;
+        transition: 1.5s;
         .text {
             margin-bottom: 15px;
             font-size: 20px;
             line-height: 35px;
             text-align: right;
+            opacity: 0;
+            transition: 1.5s;
         }
     }
     .wv_right {
+        position: relative;
+        top: 300px;
         display: inline-block;
         vertical-align: top;
         margin-left: 37px;
+        opacity: 0;
+        transition: 1.5s;
         img {
             height: 100%;
+        }
+    }
+    &.on {
+        .wv_left {
+            top: 0;
+            opacity: 1;
+            .text {
+                opacity: 1;
+                transition-delay: 1.5s;
+            }
+        }
+        .wv_right {
+            top: 0;
+            opacity: 1;
         }
     }
 }
@@ -583,26 +629,12 @@
     }
 }
 
-
-
 .main_culture {
     position: relative;
-    min-height: 100vh;
-    padding-top: 130vh;
-    padding-bottom: 163px;
-    box-sizing: content-box;
+    padding-bottom: 200px;
     .intro {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &.fixed {
-            position: fixed;
-        }
+        padding-top: 180px;
+        text-align: center;
         .inner {
             display: inline-block;
             width: 800px;
@@ -615,10 +647,7 @@
 }
 
 .main_culture_item {
-    position: relative;
-    z-index: 1;
-    height: 100vh;
-    box-sizing: content-box;
+    margin-top: 75px;
     text-align: center;
 }
 .mci {
@@ -632,11 +661,13 @@
         top: 300px;
         left: 300px;
         z-index: 2;
+        display: inline-block;
         width: 300px;
         height: 300px;
         padding: 40px 0;
         text-align: center;
         font-family: $mj;
+        transition: 1.5s ease-in-out;
         .img {
             position: absolute;
             top: 0;
@@ -698,6 +729,41 @@
             position: absolute;
             top: 300px;
             left: 300px;
+            transition: 1.5s ease-in-out;
+        }
+    }
+    &.on {
+        .items {
+            &.ty1 {
+                top: 0;
+                left: 0;
+            }
+            &.ty2 {
+                top: 0;
+                left: 600px;
+            }
+            &.ty3 {
+                top: 600px;
+                left: 600px;
+            }
+            &.ty4 {
+                top: 600px;
+                left: 0;
+            }
+        }
+        .imgs {
+            .mci_img01 {
+                top: 0;
+            }
+            .mci_img02 {
+                left: 600px;
+            }
+            .mci_img03 {
+                top: 600px;
+            }
+            .mci_img04 {
+                left: 0;
+            }
         }
     }
 }
